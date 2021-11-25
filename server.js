@@ -71,6 +71,16 @@ app.get("/messages/sync", (req, res) => {
   });
 });
 
+app.delete("/messages/delete", (req, res) => {
+  Messages.remove((err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send("data");
+    }
+  });
+});
+
 // app.get("/messages/name", (req, res) => {
 //   Messages.findOne({name: {$in: req.body.name } },(err, data) => {
 //     if (err) {
