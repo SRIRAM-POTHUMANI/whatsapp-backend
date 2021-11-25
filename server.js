@@ -71,6 +71,15 @@ app.get("/messages/sync", (req, res) => {
   });
 });
 
+app.get("/messages/name", (req, res) => {
+  Messages.find({name: {$in: req.body.name } },(err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
 app.post("/messages/new", (req, res) => {
   const dbMessage = req.body;
 
