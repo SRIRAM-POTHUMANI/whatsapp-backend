@@ -14,6 +14,7 @@ const pusher = new Pusher({
   secret: "f1b8c281d0543f1443bb",
   cluster: "ap2",
   useTLS: true,
+
 });
 
 const db = mongoose.connection;
