@@ -23,7 +23,7 @@ db.once("open", () => {
   const msgCollection = db.collection("messagecontents");
   const changeStream = msgCollection.watch();
   changeStream.on("change", (change) => {
-    console.log("a change occured", change);
+    // console.log("a change occured", change);
 
     if (change.operationType === "insert") {
       const messageDetails = change.fullDocument;
@@ -68,6 +68,7 @@ app.get("/messages/sync", (req, res) => {
       res.status(200).send(data);
     }
   });
+  
 });
 
 app.delete("/messages/delete", (req, res) => {
@@ -81,7 +82,7 @@ app.delete("/messages/delete", (req, res) => {
 });
 
 // app.get("/messages/name", (req, res) => {
-//   Messages.findOne({name: {$in: req.body.name } },(err, data) => {
+//   Messages.findOne((err, data) => {
 //     if (err) {
 //       res.status(500).send(err);
 //     } else {
