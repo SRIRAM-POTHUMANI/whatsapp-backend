@@ -9,11 +9,11 @@ import cors from "cors";
 const app = express();
 const port = process.env.PORT || 5000;
 const pusher = new Pusher({
-  appId: "1306068",
-  key: "fbea830eb5fa8b8ee57d",
-  secret: "f1b8c281d0543f1443bb",
+  appId: "1306334",
+  key: "f9888cea6103efd008ed",
+  secret: "447ee6c75d91611c04ba",
   cluster: "ap2",
-  useTLS: true,
+  useTLS: true
 });
 
 const db = mongoose.connection;
